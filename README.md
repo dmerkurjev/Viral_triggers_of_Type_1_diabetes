@@ -11,7 +11,7 @@ Performs differential expression analysis using edgeR, generates PCA and volcano
 
 Data
 
-SRA BioProject: PRJNA610861 
+SRA BioProject: 35933466
 BJ fibroblasts transduced with doxycycline inducible empty vector control retroviruses were grown in the absence
 or continued presence of doxycycline (20nm), and young-quiescent or senescent cells were collected for RNA-seq. 
 Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
