@@ -1,4 +1,4 @@
-Senescence RNA-seq — Preprocessing & Analysis
+Viral triggers of Type 1 diabetes — Preprocessing & Analysis
 
 This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
 It includes two main components:
@@ -11,13 +11,10 @@ Performs differential expression analysis using edgeR, generates PCA and volcano
 
 Data
 
-SRA BioProject: 35933466
-BJ fibroblasts transduced with doxycycline inducible empty vector control retroviruses were grown in the absence
-or continued presence of doxycycline (20nm), and young-quiescent or senescent cells were collected for RNA-seq. 
-Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
-young doxycycline untreated samples were compared separately.
+SRA BioProject: 39697323
+A novel microRNA promotes coxsackievirus B4 infection of pancreatic β cells
 
-Sample 1: GSM4395596 (SRX7865899)
+Sample 1: GSM8554348 (SRX7865899)
 cell line: BJ Fibroblast
 Stage: Young - Quiescent
 treatment: Doxycycline Minus
@@ -32,17 +29,22 @@ cell line: BJ Fibroblast
 Stage: Senescent
 treatment: Doxycycline Minus
 
-Sample 4: GSM4395599 (SRX7865902)
+Sample 4: GSM4395597 (SRX7865900)
+cell line: BJ Fibroblast
+Stage: Young - Quiescent
+treatment: Doxycycline Plus
+
+Sample 5: GSM4395598 (SRX7865901)
 cell line: BJ Fibroblast
 Stage: Senescent
-treatment: Doxycycline Plus
+treatment: Doxycycline Minus
 
 Reference files:
 
 Transcript annotation: gencode.v48.annotation.gtf
 Alignment index: hg38
 Related publication:
-PMID: 40493192
+PMID: 39697323
 
 Directory Output
 
