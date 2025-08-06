@@ -14,30 +14,31 @@ Data
 SRA BioProject: 39697323
 A novel microRNA promotes coxsackievirus B4 infection of pancreatic β cells
 
-Sample 1: GSM8554348 (SRX7865899)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
+Sample 1: GSM8554348 (SRX26276619)
+cell line: Sw.71
+cell type: Young - Quiescent
 treatment: Doxycycline Minus
 
-Sample 2: GSM4395597 (SRX7865900)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Plus
-
-Sample 3: GSM4395598 (SRX7865901)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Minus
-
-Sample 4: GSM4395597 (SRX7865900)
+Sample 2: GSM8554351 (SRX26276622)
 cell line: BJ Fibroblast
 Stage: Young - Quiescent
 treatment: Doxycycline Plus
 
-Sample 5: GSM4395598 (SRX7865901)
+Sample 3: GSM8554354 (SRX26276625)
 cell line: BJ Fibroblast
 Stage: Senescent
 treatment: Doxycycline Minus
+
+Sample 4: GSM8554357 (SRX26276628)
+cell line: BJ Fibroblast
+Stage: Young - Quiescent
+treatment: Doxycycline Plus
+
+Sample 5: GSM8554360 (SRX26276631)
+cell line: Sw.71
+cell type: Trophoblast cells
+genotype: Wild type
+treatment: CVB4-JVB infected
 
 Reference files:
 
