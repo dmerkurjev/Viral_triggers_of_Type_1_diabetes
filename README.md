@@ -27,7 +27,7 @@ genotype: Wild type
 treatment: CVB4-E2 infected
 
 Sample 3: GSM8554354 (SRX26276625)
-ell line: EndoC-BetaH1
+cell line: EndoC-BetaH1
 cell type: Pancreatic beta cells
 genotype: Wild type
 treatment: CVB4-JVB infected
