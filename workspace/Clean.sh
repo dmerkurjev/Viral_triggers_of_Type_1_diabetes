@@ -53,9 +53,9 @@ fastqc EndoC-βH1_control.fastq.gz CVB4-E2_in.fastq.gz EndoC-βH1_CVB4-JVB_in.fa
 # -------------------- Alignment (STAR) --------------------
 
 cd ../STAR_index
-wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/GRCh38.primary_assembly.genome.fa.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/GRCh38.primary_assembly.genome.fa.gz
 unzip GRCh38.primary_assembly.genome.fa.gz
-wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v46.annotation.gtf.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
 unzip gencode.v46.annotation.gtf.gz
 
 module load star
@@ -74,7 +74,7 @@ STAR --genomeDir indexes/chr10 \
 
 cd ..
 curl -L -o gencode.v46.annotation.gtf.gz \
-  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v46.annotation.gtf.gz
+  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
 gunzip -f gencode.v46.annotation.gtf.gz
 
 featureCounts -T 16 -t exon -g gene_name \
