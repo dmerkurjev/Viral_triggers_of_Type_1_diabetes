@@ -20,19 +20,22 @@ cell type: Young - Quiescent
 treatment: Doxycycline Minus
 
 Sample 2: GSM8554351 (SRX26276622)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Plus
+cell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
+genotype: Wild type
+treatment: CVB4-E2 infected
 
 Sample 3: GSM8554354 (SRX26276625)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Minus
+ell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
+genotype: Wild type
+treatment: CVB4-JVB infected
 
 Sample 4: GSM8554357 (SRX26276628)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Plus
+cell line: Sw.71
+cell type: Trophoblast cells
+genotype: Wild type
+treatment: Control
 
 Sample 5: GSM8554360 (SRX26276631)
 cell line: Sw.71
