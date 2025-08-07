@@ -16,7 +16,7 @@ ans_q2 <- unname(libsize["H460_L1"])+ unname(libsize["H460_L2"])
 # q3: How many genes have nonzero counts in sample EndoC-βH1_CVB4-JVB infected?
 ans_q3 <- sum(counts[, "ym"] > 0)
 
-# q4: How many genes are upregulated \uc0\u8805 2-fold (log2FC \u8805  1) in EndoC-βH1_control vs. EndoC-βH1_CVB4-JVB_infected with FDR < 0.01?"
+# q4: How many genes are upregulated \uc0\u8805 2-fold (log2FC \u8805  1) in EndoC-βH1_control vs. EndoC-βH1_CVB4-JVB_infected with FDR < 0.01?
 res_df <- as.data.frame(res)
 ans_q4 <- sum(res_df$log2FoldChange >= 1 & res_df$padj < 0.01, na.rm = TRUE)
 
