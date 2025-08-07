@@ -18,39 +18,36 @@ EndoC-βH1_control=(SRX26276619)   # SRX26276619
 CVB4-E2_in=(SRX26276622)   # SRX26276621
 EndoC-βH1_CVB4-JVB_in=(SRX26276625)    # SRX26276625
 Sw.71_control=(SRX26276628)    # SRX26276628
-Sw.71_CVB4-JVB infected=(SRX26276631)   # SRX26276631
+Sw.71_CVB4-JVB_in=(SRX26276631)   # SRX26276631
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${ECC1_L1[@]}" "${ECC1_L1[@]}" "${H460_L1[@]}" "${H460_L1[@]}" "${PC-3_L1[@]}" "${PC-3_L2[@]}" "$PC_3_L2_siD[@]}" "${PC_3_L2_siD[@]}"; do
+for r in "${EndoC-βH1_control[@]}" "${CVB4-E2_in[@]}" "${EndoC-βH1_CVB4-JVB_in[@]}" "${Sw.71_control[@]}" "${Sw.71_CVB4-JVB_in[@]}"}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
 
-for r in "${ECC1_L1[@]}" "${ECC1_L1[@]}" "${H460_L1[@]}" "${H460_L1[@]}" "${PC-3_L1[@]}" "${PC-3_L2[@]}" "$PC_3_L2_siD[@]}" "${PC_3_L2_siD[@]}"; do
+for r in "${EndoC-βH1_control[@]}" "${CVB4-E2_in[@]}" "${EndoC-βH1_CVB4-JVB_in[@]}" "${Sw.71_control[@]}" "${Sw.71_CVB4-JVB_in[@]}"}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${ECC1_L1[@]/%/.fastq.gz}"  > ECC1_L1.fastq.gz
-cat "${ECC1_L2[@]/%/.fastq.gz}"  > ECC1_L2.fastq.gz
-cat "${H460_L1[@]/%/.fastq.gz}" > H460_L1.fastq.gz
-cat "${H460_L2[@]/%/.fastq.gz}" > H460_L2.fastq.gz
-cat "${PC-3_L1[@]/%/.fastq.gz}"  > PC-3_L1.fastq.gz
-cat "${PC-3_L2[@]/%/.fastq.gz}"  > PC-3_L2.fastq.gz
-cat "${PC_3_L1_siD[@]/%/.fastq.gz}" > PC_3_L1_siD.fastq.gz
-cat "${PC_3_L2_siD[@]/%/.fastq.gz}" > PC_3_L2_siD.fastq.gz
+cat "${EndoC-βH1_control[@]/%/.fastq.gz}"  > EndoC-βH1_control.fastq.gz
+cat "${CVB4-E2_in[@]/%/.fastq.gz}"  > CVB4-E2_in.fastq.gz
+cat "${EndoC-βH1_CVB4-JVB_in[@]/%/.fastq.gz}" > EndoC-βH1_CVB4-JVB_in.fastq.gz
+cat "${Sw.71_control[@]/%/.fastq.gz}" > Sw.71_control.fastq.gz
+cat "${Sw.71_CVB4-JVB_in[@]/%/.fastq.gz}"  > Sw.71_CVB4-JVB_in.fastq.gz
 
 # Move to fastq/ folder
-mv ECC1*.fastq.gz H460*.fastq.gz PC_3*.fastq.gz ../fastq/
+mv CVB4.fastq.gz Endo*.fastq.gz Sw*.fastq.gz ../fastq/
 
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc ECC1_L1.fastq.gz ECC1_L2.fastq.gz H460_L1.fastq.gz H460_L2.fastq.gz PC-3_L1.fastq.gz PC-3_L2.fastq.gz PC_3_L1_siD.fastq.gz PC_3_L2_siD.fastq.gz \
+fastqc EndoC-βH1_control.fastq.gz CVB4-E2_in.fastq.gz EndoC-βH1_CVB4-JVB_in.fastq.gz Sw.71_control.fastq.gz Sw.71_CVB4-JVB_in.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (STAR) --------------------
@@ -58,8 +55,8 @@ fastqc ECC1_L1.fastq.gz ECC1_L2.fastq.gz H460_L1.fastq.gz H460_L2.fastq.gz PC-3_
 cd ../STAR_index
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/GRCh38.primary_assembly.genome.fa.gz
 unzip GRCh38.primary_assembly.genome.fa.gz
-wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz
-unzip gencode.v29.annotation.gtf.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v46.annotation.gtf.gz
+unzip gencode.v46.annotation.gtf.gz
 
 module load star
 GENOMEDIR="./RNAseq/genome/"
@@ -67,7 +64,7 @@ mdkir -p $GENOMEDIR/STAR
 STAR --runThreadN 23 --runMode genomeGenerate --genomeDir $GENOMEDIR/STAR --genomeFastaFiles $GENOMEDIR/GRCh38.primary_assembly.genome.fa --sjdbGTFfile $GENOMEDIR/gencode.v29.primary_assembly.annotation.gtf
 cd ../trimmed
 STAR --genomeDir indexes/chr10 \
-      --readFilesIn ECC1_L1.fastq.gz ECC1_L2.fastq.gz H460_L1.fastq.gz H460_L2.fastq.gz PC-3_L1.fastq.gz PC-3_L2.fastq.gz PC_3_L1_siD.fastq.gz PC_3_L2_siD.fastq.gz  \
+      --readFilesIn EndoC-βH1_control.fastq.gz CVB4-E2_in.fastq.gz EndoC-βH1_CVB4-JVB_in.fastq.gz Sw.71_control.fastq.gz Sw.71_CVB4-JVB_in.fastq.gz \
       --readFilesCommand zcat \
       --outSAMtype BAM SortedByCoordinate \
       --quantMode GeneCounts \
@@ -76,12 +73,12 @@ STAR --genomeDir indexes/chr10 \
 # -------------------- Quantification (featureCounts) --------------------
 
 cd ..
-curl -L -o gencode.v16.annotation.gtf.gz \
-  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v16.annotation.gtf.gz
-gunzip -f gencode.v16.annotation.gtf.gz
+curl -L -o gencode.v46.annotation.gtf.gz \
+  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v46.annotation.gtf.gz
+gunzip -f gencode.v46.annotation.gtf.gz
 
 featureCounts -T 16 -t exon -g gene_name \
-  -a gencode.v16.annotation.gtf \
+  -a gencode.v46.annotation.gtf \
   -o counts/raw_counts_gene_sym.txt aligned/*.bam \
   &> logs/featureCounts_gene_sym.log
 
