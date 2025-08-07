@@ -62,4 +62,4 @@ counts/   # gene-level count matrix
 logs/     # logs from trimming, alignment, counting  
 qc/       # FastQC output  
 STAR_index/  # reference index for alignment  
-Notes
+
