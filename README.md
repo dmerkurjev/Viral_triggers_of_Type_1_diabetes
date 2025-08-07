@@ -15,9 +15,10 @@ SRA BioProject: 39697323
 A novel microRNA promotes coxsackievirus B4 infection of pancreatic β cells
 
 Sample 1: GSM8554348 (SRX26276619)
-cell line: Sw.71
-cell type: Young - Quiescent
-treatment: Doxycycline Minus
+cell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
+genotype: Wild type
+treatment: Control
 
 Sample 2: GSM8554351 (SRX26276622)
 cell line: EndoC-BetaH1
