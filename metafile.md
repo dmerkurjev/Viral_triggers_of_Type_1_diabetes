@@ -45,5 +45,3 @@ paths:\
   qc: qc/\
   reference:\
     STAR_index: STAR_index/hg38/genome\
-    annotation_gtf: gencode.v16.annotation.gtf\
-\
