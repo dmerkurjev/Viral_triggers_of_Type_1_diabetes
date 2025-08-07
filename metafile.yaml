@@ -15,27 +15,27 @@ domain: rna_seq\
 organism: Homo sapiens\
 experiment_type: RNA seq\
 platform: Illumina Illumina NovaSeq 6000\
-ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg39) \
+ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
 read_type: paired_end\
 sample_count: 5\
 sra_runs_total: 5\
 \
 samples:\
-  ECC1_NT_L1:\
-    condition: siRNA_ECC-1_NT_Rep1_L1\
-    sra_runs: [SRX24155225]\
-  ECC1_NT_L2:\
-    condition: siRNA_ECC-1_NT_Rep1_L2\
-    sra_runs: [SRX24155226]\
-  H460_NCI_L1:\
-    condition: siRNA_NCI-H460_NT_Rep1_L1\
+  EndoC-βH1_control:\
+    condition: EndoC-βH1, Control, biol rep1, unifected\
+    sra_runs: [SRX26276619]\
+  EndoC-βH1_CVB4-E2 infected:\
+    condition: EndoC-βH1, CVB4-E2 infected, biol rep1\
+    sra_runs: [SRX26276622]\
+  EndoC-βH1_CVB4-JVB infected:\
+    condition: EndoC-βH1, CVB4-JVB infected, biol rep1\
     sra_runs: [SRX24155239]\
-  H460_NCI_L2:\
-    condition: siRNA_NCI-H460_NT_Rep1_L2\
-    sra_runs: [SRX24155240]\
-  PC-3_NT_L1:\
-    condition: siRNA_PC-3_NT_Rep1_L1\
-    sra_runs: [SRX24155254]\
+  Sw.71_control:\
+    condition: Sw.71, Control, biol rep1, unifected\
+    sra_runs: [SRX26276625]\
+  Sw.71_CVB4-JVB infected:\
+    condition: Sw.71, CVB4-JVB infected, biol rep1\
+    sra_runs: [SRX26276631]\
 \
 paths:\
   fastq: fastq/\
