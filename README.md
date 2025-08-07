@@ -1,12 +1,12 @@
 Viral triggers of Type 1 diabetes — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
+This repository contains an end-to-end workflow for small RNA-sequencing to show that infection of immortalized trophoblast cells with coxsackievirus caused differential regulation of several miRNAs.
 It includes two main components:
 
 Preprocessing (preprocess.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
 
-Analysis (SenescenceRNAseq_analysis.Rmd)
+Analysis (SmallRNAseq_analysis.Rmd)
 Performs differential expression analysis using edgeR, generates PCA and volcano plots, and visualizes gene expression levels.
 
 Data
