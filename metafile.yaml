@@ -29,10 +29,10 @@ samples:\
     sra_runs: [SRX26276622]\
   EndoC-βH1_CVB4-JVB infected:\
     condition: EndoC-βH1, CVB4-JVB infected, biol rep1\
-    sra_runs: [SRX24155239]\
+    sra_runs: [SRX26276625]\
   Sw.71_control:\
     condition: Sw.71, Control, biol rep1, unifected\
-    sra_runs: [SRX26276625]\
+    sra_runs: [SRX26276628]\
   Sw.71_CVB4-JVB infected:\
     condition: Sw.71, CVB4-JVB infected, biol rep1\
     sra_runs: [SRX26276631]\
