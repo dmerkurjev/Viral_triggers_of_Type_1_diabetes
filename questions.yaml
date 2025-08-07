@@ -30,7 +30,7 @@ questions:\
 \
   - id: q3\
     stage: quantification\
-    text: "How many genes have nonzero counts in sample EndoC-βH1_CVB4-JVB infected?"\
+    text: "How many genes have nonzero counts in sample EndoC-βH1_CVB4-JVB_infected?"\
     answer_type: integer_exact\
 \
   - id: q4\
