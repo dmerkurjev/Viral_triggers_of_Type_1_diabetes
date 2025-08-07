@@ -56,7 +56,7 @@ cd ../STAR_index
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/GRCh38.primary_assembly.genome.fa.gz
 unzip GRCh38.primary_assembly.genome.fa.gz
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
-unzip gencode.v46.annotation.gtf.gz
+unzip gencode.v48.annotation.gtf.gz
 
 module load star
 GENOMEDIR="./RNAseq/genome/"
@@ -75,7 +75,7 @@ STAR --genomeDir indexes/chr10 \
 cd ..
 curl -L -o gencode.v46.annotation.gtf.gz \
   https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
-gunzip -f gencode.v46.annotation.gtf.gz
+gunzip -f gencode.v48.annotation.gtf.gz
 
 featureCounts -T 16 -t exon -g gene_name \
   -a gencode.v46.annotation.gtf \
