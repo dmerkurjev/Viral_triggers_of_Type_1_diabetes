@@ -6,7 +6,7 @@ Answers to questions path, please run full script succesfully first to run those
 
 # q1: "How many sequencing lanes were concatenated to form sample EndoC-βH1_control?
 # If you later generate a manifest upstream, read it here instead of hardcoding
-sample_lanes <- c(ECC1_L1 = 2L, ECC1_L2 = 2L, H460_L1 = 2L, H460_L2 = 2L, ECC1_L1 = 2L, ECC1_L2 = 2L, PC-3_L1= 2L, PC-3_L2= 2L, PC_3_L1_siD= 2L, PC_3_L2_sid= 2L)
+sample_lanes <- c(EndoC-βH1_control = 1L, CVB4-E2_in = 1L, EndoC-βH1_CVB4-JVB_in = 1L, Sw.71_control = 1L, Sw.71_CVB4-JVB_in = 1L)
 ans_q1 <- unname(sample_lanes["ym"])
 
 # q2: What is the library size (total read counts) for siRNA_NCI-H460_NT_Rep1?
