@@ -20,7 +20,7 @@ ans_q3 <- sum(counts[, "EndoC-βH1_CVB4-JVB_infected"] > 0)
 res_df <- as.data.frame(res)
 ans_q4 <- sum(res_df$log2FoldChange >= 1 & res_df$padj < 0.05, na.rm = TRUE)
 
-# q5: Which gene is ranked 2th by log2 fold change (upregulated) in EndoC-βH1_control vs. EndoC-βH1_CVB4-JVB_infected?
+# q5: Which gene is ranked 2th by log2 fold change (upregulated or downregulated) in EndoC-βH1_control vs. EndoC-βH1_CVB4-JVB_infected?
 res_df$SYMBOL <- rownames(res_df)
 up_rank <- res_df %>%
   dplyr::filter(!is.na(log2FoldChange) & log2FoldChange > 0) %>%
