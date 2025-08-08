@@ -3,10 +3,10 @@ Viral triggers of Type 1 diabetes — Preprocessing & Analysis
 This repository contains an end-to-end workflow for small RNA-sequencing to show that infection of immortalized trophoblast cells with coxsackievirus caused differential regulation of several miRNAs.
 It includes two main components:
 
-Preprocessing (preprocess.sh)
+Preprocessing (Clean.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
 
-Analysis (SmallRNAseq_analysis.Rmd)
+Analysis (Differential_expression.sh)
 Performs differential expression analysis using edgeR, generates PCA and volcano plots, and visualizes gene expression levels.
 
 Data
