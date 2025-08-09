@@ -1,4 +1,4 @@
-To download the fastq files:
+To download the data:
 
 wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879/SRR30879333/SRR30879333.lite.1 # SRX26276619: EndoC-βH1, Control, biol rep1, unifected
 
