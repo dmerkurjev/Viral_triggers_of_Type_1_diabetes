@@ -9,3 +9,5 @@ wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879
 wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879/SRR30879324/SRR30879324.lite.1) # SRX26276625: Sw.71, Control, biol rep1, unifected
 
 wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879/SRR30879321/SRR30879321.lite.1 # SRX26276631: Sw.71, CVB4-JVB infected, biol rep1
+
+fastq-dump --split-files *lite.1 # convert to fastq
