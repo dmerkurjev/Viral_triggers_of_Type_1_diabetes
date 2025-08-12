@@ -14,40 +14,43 @@ cd "${PROJECT_DIR}/raw"
 
 
 # Group SRA run IDs by biological sample 
-EndoC-βH1_control=(SRX26276619)   # SRX26276619
-CVB4-E2_in=(SRX26276622)   # SRX26276621
-EndoC-βH1_CVB4-JVB_in=(SRX26276625)    # SRX26276625
-Sw.71_control=(SRX26276628)    # SRX26276628
-Sw.71_CVB4-JVB_in=(SRX26276631)   # SRX26276631
+EndoC-βH1_control_rep1=(SRX26276619)   # SRX26276619
+EndoC-βH1_control_rep2=(SRX26276620)   # SRX26276620
+CVB4-E2_in_rep1=(SRX26276622)   # SRX26276621
+CVB4-E2_in_rep2=(SRX26276629)   # SRX26276628
+EndoC-βH1_CVB4-JVB_in_rep1=(SRX26276625)    # SRX26276625
+EndoC-βH1_CVB4-JVB_in_rep2=(SRX26276626)    # SRX26276626
+
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${EndoC-βH1_control[@]}" "${CVB4-E2_in[@]}" "${EndoC-βH1_CVB4-JVB_in[@]}" "${Sw.71_control[@]}" "${Sw.71_CVB4-JVB_in[@]}"}"; do
+for r in "${EndoC-βH1_control_rep1[@]}" "${EndoC-βH1_control_rep2[@]}" "${CVB4-E2_in_rep1[@]}" "${CVB4-E2_in_rep2[@]}" "${EndoC-βH1_CVB4-JVB_in_rep1[@]}" "${EndoC-βH1_CVB4-JVB_in_rep2[@]}"}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
 
-for r in "${EndoC-βH1_control[@]}" "${CVB4-E2_in[@]}" "${EndoC-βH1_CVB4-JVB_in[@]}" "${Sw.71_control[@]}" "${Sw.71_CVB4-JVB_in[@]}"}"; do
+for r in "${EndoC-βH1_control_rep1[@]}" "${EndoC-βH1_control_rep2[@]}" "${CVB4-E2_in_rep1[@]}" "${CVB4-E2_in_rep2[@]}" "${EndoC-βH1_CVB4-JVB_in_rep1[@]}" "${EndoC-βH1_CVB4-JVB_in_rep2[@]}"}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${EndoC-βH1_control[@]/%/.fastq.gz}"  > EndoC-βH1_control.fastq.gz
-cat "${CVB4-E2_in[@]/%/.fastq.gz}"  > CVB4-E2_in.fastq.gz
-cat "${EndoC-βH1_CVB4-JVB_in[@]/%/.fastq.gz}" > EndoC-βH1_CVB4-JVB_in.fastq.gz
-cat "${Sw.71_control[@]/%/.fastq.gz}" > Sw.71_control.fastq.gz
-cat "${Sw.71_CVB4-JVB_in[@]/%/.fastq.gz}"  > Sw.71_CVB4-JVB_in.fastq.gz
+cat "${EndoC-βH1_control_rep1[@]/%/.fastq.gz}"  > EndoC-βH1_control_rep1.fastq.gz
+cat "${EndoC-βH1_control_rep2[@]/%/.fastq.gz}"  > EndoC-βH1_control_rep2.fastq.gz
+cat "${CVB4-E2_in_rep1[@]/%/.fastq.gz}"  > CVB4-E2_in_rep1.fastq.gz
+cat "${CVB4-E2_in_rep2[@]/%/.fastq.gz}"  > CVB4-E2_in_rep2.fastq.gz
+cat "${EndoC-βH1_CVB4-JVB_in_rep1[@]/%/.fastq.gz}" > EndoC-βH1_CVB4-JVB_in_rep1.fastq.gz
+cat "${EndoC-βH1_CVB4-JVB_in_rep2[@]/%/.fastq.gz}" > EndoC-βH1_CVB4-JVB_in_rep2.fastq.gz
 
 # Move to fastq/ folder
-mv CVB4.fastq.gz Endo*.fastq.gz Sw*.fastq.gz ../fastq/
+mv CVB4.fastq.gz Endo*.fastq.gz ../fastq/
 
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc EndoC-βH1_control.fastq.gz CVB4-E2_in.fastq.gz EndoC-βH1_CVB4-JVB_in.fastq.gz Sw.71_control.fastq.gz Sw.71_CVB4-JVB_in.fastq.gz \
+fastqc EndoC-βH1_control_rep1.fastq.gz EndoC-βH1_control_rep2.fastq.gz CVB4-E2_in_rep1.fastq.gz CVB4-E2_in_rep2.fastq.gz EndoC-βH1_CVB4-JVB_in_rep1.fastq.gz EndoC-βH1_CVB4-JVB_in_rep2.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (STAR) --------------------
