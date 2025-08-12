@@ -4,14 +4,14 @@ Answers to questions path, please run full script succesfully first to run those
 # ---- Answers for q1..q5 ----
 # Requires objects 'counts', 'dds', and 'res' created above
 
-# q1: "How many sequencing lanes were concatenated to form sample EndoC-βH1_control?
+# q1: "How many sequencing lanes were concatenated to form sample EndoC-βH1_control_rep1?
 # If you later generate a manifest upstream, read it here instead of hardcoding
-sample_lanes <- c(EndoC-βH1_control = 1L, CVB4-E2_in = 1L, EndoC-βH1_CVB4-JVB_in = 1L, Sw.71_control = 1L, Sw.71_CVB4-JVB_in = 1L)
-ans_q1 <- unname(sample_lanes["ym"])
+sample_lanes <- c(EndoC-βH1_control_rep1 = 1L, EndoC-βH1_control_rep2 = 1L, CVB4-E2_in_rep1 = 1L, CVB4-E2_in_rep2 = 1L, EndoC-βH1_CVB4-JVB_in_rep1 = 1L, EndoC-βH1_CVB4-JVB_in_rep2 = 1L)
+ans_q1 <- unname(sample_lanes["EndoC-βH1_control_rep1"])
 
-# q2: What is the library size (total read counts) for Sw.71_control?
+# q2: What is the library size (total read counts) for EndoC-βH1_control_rep2?
 libsize <- colSums(counts)
-ans_q2 <- unname(libsize["Sw.71_control"]))
+ans_q2 <- unname(libsize["EndoC-βH1_control_rep2"]))
 
 # q3: How many genes have nonzero counts in sample EndoC-βH1_CVB4-JVB_infected?
 ans_q3 <- sum(counts[, "EndoC-βH1_CVB4-JVB_infected"] > 0)
