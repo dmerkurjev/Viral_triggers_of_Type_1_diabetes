@@ -24,18 +24,21 @@ samples:\
   EndoC-βH1_control:\
     condition: EndoC-βH1, Control, biol rep1, unifected\
     sra_runs: [SRX26276619]\
+  EndoC-βH1_control:\
+    condition: EndoC-βH1, Control, biol rep2, unifected\
+    sra_runs: [SRX26276620]\
   EndoC-βH1_CVB4-E2 infected:\
     condition: EndoC-βH1, CVB4-E2 infected, biol rep1\
     sra_runs: [SRX26276622]\
+  EndoC-βH1_CVB4-E2 infected:\
+    condition: EndoC-βH1, CVB4-E2 infected, biol rep2\
+    sra_runs: [SRX26276629]\
   EndoC-βH1_CVB4-JVB infected:\
     condition: EndoC-βH1, CVB4-JVB infected, biol rep1\
-    sra_runs: [SRX26276625]\
-  Sw.71_control:\
-    condition: Sw.71, Control, biol rep1, unifected\
-    sra_runs: [SRX26276628]\
-  Sw.71_CVB4-JVB infected:\
-    condition: Sw.71, CVB4-JVB infected, biol rep1\
-    sra_runs: [SRX26276631]\
+    sra_runs: [SRX26276621]\
+  EndoC-βH1_CVB4-JVB infected:\
+    condition: EndoC-βH1, CVB4-JVB infected, biol rep2\
+    sra_runs: [SRX26276626]\
 \
 paths:\
   fastq: fastq/\
