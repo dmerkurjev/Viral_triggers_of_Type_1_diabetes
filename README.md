@@ -65,7 +65,6 @@ raw/      # downloaded and processed SRA FASTQs
 fastq/    # concatenated FASTQs (one per sample)  
 aligned/  # STAR-aligned BAMs  
 counts/   # gene-level count matrix  
-logs/     # logs from trimming, alignment, counting  
 qc/       # FastQC output  
 STAR_index/  # reference index for alignment  
 
