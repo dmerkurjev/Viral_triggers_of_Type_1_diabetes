@@ -20,7 +20,7 @@
 questions:\
   - id: q1\
     stage: read_processing\
-    text: "How many sequencing lanes were concatenated to form sample EndoC-βH1_control?"\
+    text: "How many sequencing lanes were concatenated to form sample EndoC-βH1_control_rep1)?"\
     answer_type: integer_exact\
 \
   - id: q2\
