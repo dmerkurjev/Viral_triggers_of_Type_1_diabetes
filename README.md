@@ -20,27 +20,33 @@ cell type: Pancreatic beta cells
 genotype: Wild type
 treatment: Control
 
-Sample 2: GSM8554351 (SRX26276622)
+Sample 2: GSM8554349 (SRX26276620)
+cell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
+genotype: Wild type
+treatment: Control
+
+Sample 3: GSM8554351 (SRX26276622)
 cell line: EndoC-BetaH1
 cell type: Pancreatic beta cells
 genotype: Wild type
 treatment: CVB4-E2 infected
 
-Sample 3: GSM8554354 (SRX26276625)
+Sample 4: GSM8554360 (SRX26276629)
+cell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
+genotype: Wild type
+treatment: CVB4-E2 infected
+
+Sample 5: GSM8554354 (SRX26276625)
 cell line: EndoC-BetaH1
 cell type: Pancreatic beta cells
 genotype: Wild type
 treatment: CVB4-JVB infected
 
-Sample 4: GSM8554357 (SRX26276628)
-cell line: Sw.71
-cell type: Trophoblast cells
-genotype: Wild type
-treatment: Control
-
-Sample 5: GSM8554360 (SRX26276631)
-cell line: Sw.71
-cell type: Trophoblast cells
+Sample 6: GSM8554355 (SRX26276626)
+cell line: EndoC-BetaH1
+cell type: Pancreatic beta cells
 genotype: Wild type
 treatment: CVB4-JVB infected
 
