@@ -17,8 +17,8 @@ experiment_type: RNA seq\
 platform: Illumina Illumina NovaSeq 6000\
 ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
 read_type: paired_end\
-sample_count: 5\
-sra_runs_total: 5\
+sample_count: 6\
+sra_runs_total: 6\
 \
 samples:\
   EndoC-βH1_control:\
