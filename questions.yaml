@@ -25,7 +25,7 @@ questions:\
 \
   - id: q2\
     stage: quality_control\
-    text: "What is the library size (total read counts) is higher: EndoC-βH1_control_rep2 or EndoC-βH1_CVB4-JVB_infected?"\
+    text: "What sample has the library size (total read counts) is higher: EndoC-βH1_control_rep2 or EndoC-βH1_CVB4-JVB_infected?"\
     answer_type: string_exact\
 \
   - id: q3\
