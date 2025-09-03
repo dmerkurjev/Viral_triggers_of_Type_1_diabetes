@@ -1,4 +1,13 @@
-To download the data:
+# To download the data:
+
+# Create environment
+conda create -n Viral_triggers_of_Type_1_diabetes -c bioconda -c conda-forge \
+  sra-tools fastqc multiqc hisat2 samtools trimmomatic subread -y
+conda activate Viral_triggers_of_Type_1_diabetes
+
+# Folder setup
+mkdir -p ~/0_Viral_triggers_of_Type_1_diabetes/{data,fastq,trimmed,aligned,counts,logs,qc}
+cd ~/0_Viral_triggers_of_Type_1_diabetes/data
 
 wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879/SRR30879333/SRR30879333.lite.1 # SRX26276619: EndoC-βH1, Control, biol rep1, unifected
 
@@ -12,4 +21,7 @@ wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879
 
 wget https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-zq-7/SRR030/30879/SRR30879326/SRR30879326.lite.1) # SRX26276626: EndoC-βH1, CVB4-JVB infected, biol rep2
 
-fastq-dump --split-files *lite.1 # convert to fastq
+for r in "${SRR[@]}"; do
+  fasterq-dump -e 16 -p -O . "$r"
+  gzip -f "${r}.fastq"
+done
